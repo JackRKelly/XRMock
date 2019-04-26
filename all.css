@@ -1,25 +1,29 @@
 @font-face {
   font-family: 'HelveticaNeue-Light';
-  src: url('HelveticaNeue-Light.otf');
+  src: url('fonts/HelveticaNeue-Light.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-Light2';
+  src: url('fonts/HelveticaNeueLTPro-Th.otf');
 }
 
 body {
-  margin: 20px;
+  margin: 30px;
   background-color: black;
 }
-
 
 #screen {
   width: 375px;
   height: 812px;
   background-image: url(images/wallpaper.png);
   background-size: cover;
-  border-radius: 45px;
+  border-radius: 37px;
   margin: auto;
   box-shadow:
-    0 0 0 8px black,
-    0 0 0 10px #B00D23,
-    0 0 15px 11px #B00D23;
+    0 0 0 10px black,
+    0 0 0 12px #B00D23,
+    0 0 12px 12px #B00D23;
   position: relative;
 }
 
@@ -63,7 +67,54 @@ body {
   background-color: white;
   left: 50%;
   transform: translateX(-50%);
+  animation: barAnim 5s infinite;
 }
+
+#bar p {
+  text-align: center;
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  white-space: nowrap;
+  font-family: 'HelveticaNeue-Light', serif;
+  color: white;
+  transform: translateX(-50%);
+  animation: barPAnim 5s infinite;
+  opacity: 0;
+}
+
+@keyframes barPAnim {
+  0% {
+    opacity: 0;
+    top: -38px;
+  }
+  30% {
+    top: -45px;
+  }
+  50%, 70% {
+    opacity: 1;
+    top: -55px;
+  }
+  88% {
+    opacity: 0;
+  }
+}
+
+@keyframes barAnim {
+  0%, 20% {
+  bottom: 8px;
+  }
+  35%, 70% {
+  bottom: 16px;
+  }
+  90% {
+  bottom: 8px;
+  }
+  100% {
+  bottom: 8px;
+  }
+}
+
 
 #flashlight {
   background-color: #00000050;
@@ -90,11 +141,6 @@ section#credit {
   margin: 50px;
 }
 
-section#credit h1 {
-  color: white;
-  text-align: center;
-}
-
 
 #flashlight img {
   height: 30px;
@@ -104,19 +150,36 @@ section#credit h1 {
   height: 27px;
 }
 
-#credit div {
+section#credit h1 {
+  background: -webkit-linear-gradient(35deg, #ffffff, #B00D23);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-family: 'HelveticaNeue-Light', serif;
+}
+
+#credit div a {
+  font-family: 'HelveticaNeue-Light', serif;
   color: white;
+  font-weight: bold;
+}
+
+#credit div  {
+  font-family: 'HelveticaNeue-Light', serif;
+  background: -webkit-linear-gradient(35deg, #ffffff, #B00D23);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #provider p {
   position: absolute;
-  top: 17px;
+  top: 11px;
   left: 30px;
   font-family: 'HelveticaNeue-Light', serif;
   color: white;
   margin: 0;
   font-size: 15px;
-  text-shadow: 0 0 4px black;
+  text-shadow: 0 0 5px black;
 }
 
 #toparea {
@@ -142,7 +205,72 @@ section#credit h1 {
 }
 
 #wifi {
-  position: aboslute;
-  top: 10px;
-  right: 25px;
+  position: absolute;
+  top: 20px;
+  right: 55px;
+  border-radius: 400px;
+}
+
+#wifi img {
+  height: 18px;
+  text-shadow: 0 0 4px black;
+}
+
+#battery {
+  position: absolute;
+  top: 9px;
+  right: 40px;
+  border-radius: 400px;
+}
+
+#battery img {
+  height: 22px;
+  text-shadow: 0 0 4px black;
+  transform: rotate(90deg);
+}
+
+#coverage {
+  position: absolute;
+  top: 19px;
+  right: 77px;
+  border-radius: 400px;
+}
+
+#coverage img {
+  height: 15px;
+  text-shadow: 0 0 4px black;
+}
+
+#lock {
+  position: absolute;
+  top: 86px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#lock img {
+  height: 35px;
+  text-shadow: 0 0 4px black;
+}
+
+#time h3 {
+  font-family: 'HelveticaNeue-Light2', serif;
+  position: absolute;
+  top: 40px;
+  font-size: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: 100;
+}
+
+#date p {
+  font-family: 'HelveticaNeue-Light', serif;
+  position: absolute;
+  top: 175px;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: 100;
 }
