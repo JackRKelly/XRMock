@@ -8,6 +8,13 @@
   src: url('fonts/HelveticaNeueLTPro-Th.otf');
 }
 
+@media only screen and (max-width: 905px) {
+div#screen {
+  transform: scale(.6);
+}
+
+}
+
 body {
   margin-top: 30px;
   background-color: black;
